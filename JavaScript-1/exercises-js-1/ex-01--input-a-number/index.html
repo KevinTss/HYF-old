@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Input a number</title>
+</head>
+<body>
+  <script>
+  
+    // Let's ask a number to the user
+    let number = prompt('Enter a number');
+
+    /* 
+     * You can uncomment these two lines to see in the 
+     * console the value and the type of the value 
+     */
+    // console.log('Value :', number);
+    // console.log('Type of value :', typeof number);
+
+    // Now, do the convertion of the value receive by the 'prompt' method
+    let intNumber = parseInt(number, 10);
+
+    // Why '10' as a second parameter ? Have a look here :
+    // - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+
+    /* 
+     * You can uncomment these two lines to see in the 
+     * console the value and the type of the value 
+     */
+    // console.log('Value :', intNumber);
+    // console.log('Type of Value :', typeof intNumber);
+    
+    if ( isNaN(intNumber) ) {
+      // If the value enter is not a number tell to the user he fucked up...
+      alert('You don\'t listen to me, you lose!')
+    } else {
+      // Else, is in fact a number
+      alert('Nice, thank you so much!')
+    }
+  
+  </script>
+</body>
+</html>
