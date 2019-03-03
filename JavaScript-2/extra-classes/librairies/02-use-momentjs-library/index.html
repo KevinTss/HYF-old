@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Use moment js</title>
+  <!-- I get the code from a CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
+</head>
+<body>
+  <p>Is this page I use moment js librairy you can see <a href="https://momentjs.com/docs/">here</a> the doc.</p>
+  <hr>
+  <h1>We are on </h1>
+  <script>
+    // I get the current day according to the doc : 
+    // https://momentjs.com/docs/#/displaying/format/
+    const dayOfCurrentWeek = moment().format('dddd')
+
+    // I get all h1 on the page
+    const titles = document.getElementsByTagName("h1")
+    // check in the console
+    console.log("titles", titles)
+    // I get just the first one (because there is only one h1 on the DOM)
+    const mainTitle = titles[0]
+    // check in the console
+    console.log("title", mainTitle)
+    // I get change the content
+    mainTitle.innerText = mainTitle.innerText + " " + dayOfCurrentWeek
+
+  </script>
+</body>
+</html>
