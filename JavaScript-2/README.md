@@ -18,3 +18,6 @@ https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/How_to_cr
 - querySelectorAll: https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
 
 - innerHTML :https://developer.mozilla.org/fr/docs/Web/API/Element/innertHTML
+
+- addEventListener: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+- removeEventListener: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener
