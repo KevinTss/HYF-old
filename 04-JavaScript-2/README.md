@@ -1,5 +1,6 @@
-# Interact with DOM
+# Javascript module 2
 
+## Interact with DOM
 
 ### Read what's the DOM is :
 https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
