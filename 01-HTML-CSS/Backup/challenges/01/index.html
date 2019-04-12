@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Challenge 1</title>
+  <style>
+  
+    #iphone{
+      position:relative
+      ;width:200px;
+      height:396px;
+      margin:30px auto;
+      background:black;
+      border:2px solid #aaa;
+      box-shadow:-1px 0px 0px #555 inset;
+      border-radius:30px;
+      transform:rotate(0deg);
+      transition:transform 1s ease-out;
+    }
+
+    #iphone:hover{
+      cursor: pointer;
+      transform:rotate(360deg);
+    }
+
+    #iphone_ecran{
+      width:170px;
+      height:268px;
+      margin:63px 14px;
+      background:#222;
+      box-shadow:2px 2px 1px #000 inset;
+    }
+
+    #iphone_home{
+      position:absolute;
+      bottom:15px;
+      left:50%;
+      margin-left:-20px;
+      width:40px;
+      height:40px;
+      border-radius:20px;
+      background:#222;
+      background:linear-gradient(to right,#555 10%,#000 60%);
+    }
+
+    #iphone_home div{
+      width:12px;
+      height:12px;
+      border:2px solid #888;
+      margin:12px auto;
+      border-radius:4px;
+    }
+
+    #iphone_reflet{
+      position:absolute;
+      z-index:11;
+      width:190px;
+      height:350px;
+      top:4px;
+      left:6px;
+      border-radius:25px;    
+      background:linear-gradient(70deg,transparent 65%,rgba(255,255,255,0.35) 66%,rgba(255,255,255,0) 100%)
+    }
+
+    #iphone_shut{
+      position:absolute;
+      top:-4px;
+      right:35px;
+      width:35px;
+      height:2px;
+      background:#555;
+      background:linear-gradient(to right,#555 5%,#aaa 15%,#ddd 60%,#aaa 85%, #666);
+    }
+
+    #iphone_vib{
+      position:absolute;
+      top:35px;
+      left:-4px;
+      height:20px;
+      width:2px;
+      background:#555;
+      background:linear-gradient(#777,#aaa 15%,#555 16%,#ccc);
+    }
+
+    #iphone .iphone_vol{
+      position:absolute;
+      top:75px;
+      left:-4px;
+      height:15px;
+      width:2px;
+      background:#555;
+      background:linear-gradient(#777 10%,#ccc 35%,#ccc 65%,#777 90%);
+    }
+
+    #iphone .iphone_vol#iphone_moins{
+      top:110px;
+    }
+
+    #iphone_son{
+      position:absolute;
+      z-index:15;
+      top:30px;
+      left:50%;
+      margin-left:-18px;
+      height:4px;
+      width:36px;
+      border:2px solid #111;
+      background:#555;
+      background:linear-gradient(to right,#555 20%,#777 40%,#555 60%,#777 80%,#555);
+      border-radius:4px;
+    }
+
+    #iphone_visio{
+      position:absolute;
+      z-index:15;
+      top:30px;
+      left:65px;
+      height:5px;
+      width:5px;
+      border:1px solid #222;
+      background:#0b295f;
+      border-radius:4px;
+      box-shadow:1px 1px 1px black inset;
+    }
+
+    #iphone #iphone_joints .iphone_joint{
+      position:absolute;
+      height:3px;
+      width:3px;
+      background:black;
+    }
+
+    #iphone #iphone_joints div:nth-child(1){
+      top:-2px;
+      left:60px;
+    }
+
+    #iphone #iphone_joints div:nth-child(2){
+      top:350px;
+      left:-2px;
+    }
+
+    #iphone #iphone_joints div:nth-child(3){
+      top:350px;
+      right:-2px;
+    }
+
+    #article7 p{
+      text-align:center;
+      padding-bottom:15px;
+    }
+   
+  
+  </style>
+</head>
+<body>
+
+  <section id="article7" class="crayon article-css-7 demoTime">
+    
+    <div id="iphone" class="iphone_css">
+
+      <div id="iphone_ecran"></div>
+
+      <div id="iphone_home">
+        <div></div>
+      </div>
+
+      <div id="iphone_shut"></div>
+
+      <div id="iphone_vib"></div>
+
+      <div id="iphone_plus" class="iphone_vol"></div>
+
+      <div id="iphone_moins" class="iphone_vol"></div>
+
+      <div id="iphone_son"></div>
+
+      <div id="iphone_visio"></div>
+
+      <div id="iphone_reflet"></div>
+
+      <div id="iphone_joints">
+        <div class="iphone_joint"></div>
+        <div class="iphone_joint"></div>
+        <div class="iphone_joint"></div>
+      </div>
+
+    </div>
+
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My To-Do List</title>
+    <link rel="favicon" type="image/png" href="https://apprecs.org/gp/images/app-icons/300/8a/io.tinbits.memorigi.jpg"/>
+    <style>
+            @import url(https://fonts.googleapis.com/css?family=Walter+Turncoat);
+            @font-face {
+                font-family: 'NotoColorEmoji';
+                src: url('NotoColorEmoji.ttf') format('truetype');
+            }
+            html {
+            background: -webkit-linear-gradient(90deg, #485563 10%, #29323c 90%);
+            background: -moz-linear-gradient(90deg, #485563 10%, #29323c 90%);
+            background: -ms-linear-gradient(90deg, #485563 10%, #29323c 90%);
+            background: -o-linear-gradient(90deg, #485563 10%, #29323c 90%);
+            background: linear-gradient(90deg, #485563 10%, #29323c 90%);
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden
+            }
+
+            body {
+            font-size: 20px;
+            color: #E8E8E8;
+            font-family: "Walter Turncoat", cursive;
+            display: block;
+            width: 80%;
+            height: 80%;
+            min-height: auto;
+            margin: 30px auto 0 auto;
+            background-color: #497959;
+            padding: 20px 30px;
+            overflow-y: auto;
+            box-shadow: -1px 2px 2px 0px #555, inset 0 0 10px 0 #555;
+            -webkit-border-radius: 10px;
+            -khtml-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            border-radius: 10px;
+            border: #B78240 solid 10px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            }
+
+            body:after {
+            content: "";
+            display: block;
+            position: fixed;
+            -webkit-border-radius: 0.1em 0.1em 0 0.1em;
+            -khtml-border-radius: 0.1em 0.1em 0 0.1em;
+            -moz-border-radius: 0.1em 0.1em 0 0.1em;
+            -ms-border-radius: 0.1em 0.1em 0 0.1em;
+            -o-border-radius: 0.1em 0.1em 0 0.1em;
+            border-radius: 0.1em 0.1em 0 0.1em;
+            width: 50px;
+            height: 8px;
+            background: #f1f1f1;
+            top: 80%;
+            margin-top: 75px;
+            margin-right: 60px;
+            right: 5%;
+            box-shadow: inset 0 -4px 1px rgba(0, 0, 0, 0.3), -1px -1px 1px rgba(0, 0, 0, 0.2), 0 2px 0 rgba(0, 0, 0, 0.3)
+            }
+
+            input {
+                width: 20%;
+                border-radius: 6px;
+                height: 40px;
+                font-size: 20px;
+                font-family: "Walter Turncoat", cursive;
+                background:rgba(255,255,255,0.5);
+            }
+            .upbuttons{
+                width: 10%;
+                border-radius: 6px;
+                height: 45px;
+                font-family: "Walter Turncoat", cursive;
+                font-size: 20px;
+            }
+            button{
+                width: 25%;
+                border-radius: 6px;
+                height: 45px;
+                font-family: "Walter Turncoat", cursive;
+                font-size: 20px;
+            }
+            #inputarea{
+                margin: auto;
+                width: 90%;
+            }
+            h1{
+                text-align: center;
+            }
+            table {
+                width:80%; 
+                margin-left:auto; 
+                margin-right:auto;
+                text-align: center;
+            }
+            table {
+            border-collapse: collapse;
+            
+            }
+            thead tr { border-bottom: 3px solid #FFF; padding-bottom: 15px;
+            padding-top: 15px;}
+            
+    </style>
+    
+</head>
+<body>
+    
+    <h1>My To-Do List</h1>
+    <form id="inputarea">
+        <label id="input-task" for="userTask">Insert a task to do:</label>
+        <input type="text" id="userTask" value="">
+        <button type="button" id="add-task-button" class="upbuttons" disable>Submit</button>
+        <label id="searchLabel" for="search">Search for task:</label>
+        <input type="text" id="search" value="">
+        <button type="button" id="search-button" class="upbuttons" disable>Search</button>
+    </form>
+    <br>
+ 
+    <table id="tasklist">
+        <thead>
+            <tr id="table-heading">
+              <th>Check</th> 
+              <th id="sort-task">Task</th>
+              <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <tr class="row">
+              <td></td> 
+              <td></td>
+              <td></td>
+            </tr>
+            <tr class="row">
+              <td></td> 
+              <td></td>
+              <td></td>
+            </tr>
+        </tbody>
+          </table>
+
+    <script>
+    //////////////////////Checking input area for entry//////////////////////////
+    document.getElementById('userTask').addEventListener('input', function() {
+        let nameInput = document.getElementById('userTask').value;
+        if (nameInput !== '') {
+            document.getElementById('add-task-button').disabled = false;
+        } else {
+            document.getElementById('add-task-button').disabled = true;
+        }
+    });
+    /////////////////////Default Array Task List/////////////////////////////////
+    let tasks=["Check to do list", "Pay the bills"];
+    /////////////////////Loading default task////////////////////////////////////
+    for (let i = 0; i < tasks.length; i++) {
+        addTodo(tasks[i]);
+    }
+    /////////////////////Button Tasks////////////////////////////////////////////
+    document.getElementById("add-task-button").onclick = function() {addtask() };
+    function addTodo(taskLabel) {
+        let tableBody = document.getElementById('table-body');
+        var row = tableBody.insertRow(0);
+        row.classList.add('row')
+        var cell1 = row.insertCell(0);
+        let doneCheck = document.createElement('input');
+        doneCheck.type = 'checkbox';
+        cell1.appendChild(doneCheck);
+        var cell2 = row.insertCell(1);
+        cell2.innerHTML = taskLabel;
+        cell2.classList.add('label');
+        var cell3 = row.insertCell(2);
+        let deleteBtn = document.createElement('button');
+        deleteBtn.innerText = 'Delete';
+        deleteBtn.className = 'delete';
+        let editBtn = document.createElement('button');
+        editBtn.innerText = 'Edit';
+        editBtn.className = 'edit';
+        cell3.appendChild(editBtn);
+        cell3.appendChild(deleteBtn);
+        
+        /////////////////////Deleting Task for new delete buttons///////////////////
+        deleteBtn.onclick = function () {
+            deleteBtn.parentNode.parentNode.remove();
+        };
+        /////////////////////Edit and Save Button///////////////////////////////////
+        editBtn.onclick = function () {
+            if (editBtn.innerText==='Edit')
+            {
+                let getRow=editBtn.parentNode.parentNode;
+                let getTr=getRow.getElementsByClassName("label").item(0);
+                let innerText=getTr.innerHTML;
+                var input = document.createElement('input');
+                input.id = 'test';
+                input.value = getTr.innerHTML;
+                getTr.innerHTML="";
+                getTr.appendChild(input);
+                input.select();
+                editBtn.innerText = 'Save';
+            }
+            else 
+            {
+                let getRow=editBtn.parentNode.parentNode;
+                let getTr=getRow.getElementsByClassName("label").item(0);
+                let getInput=getTr.getElementsByTagName("input").item(0);
+                innerText=getInput.value;
+                getInput.remove()
+                getTr.innerHTML=innerText;
+                editBtn.innerText = 'Edit';
+            }
+        }
+    }
+    function addtask() {
+        let newtask = document.getElementById("userTask").value;
+        tasks.unshift(newtask);
+        /////////////////////Clearing input area after submitting//////////////////
+        document.getElementById("inputarea").reset();
+        addTodo(newtask);
+        /////////////////////Disabling submit button after hitting submit//////////
+        document.getElementById("add-task-button").disabled = true;
+    }
+    /////////////////////////sort tast when hitting task heading//////////////////
+    document.getElementById("sort-task").onclick = function() {sorttask() };
+    function sorttask() {
+      
+        tasks.sort();
+        
+        let allRows=document.getElementsByClassName("row")
+        
+            for (var i = allRows.length - 1; i >= 0; i--) {
+            // Remove first element (at [0]) repeatedly
+            allRows[0].parentNode.removeChild(allRows[0]);
+            }
+        
+        for (let a=tasks.length-1; a>=0; a--){
+            let tableBody = document.getElementById('table-body');
+            var row = tableBody.insertRow(0);
+            row.classList.add('row')
+            var cell1 = row.insertCell(0);
+            let doneCheck = document.createElement('input');
+            doneCheck.type = 'checkbox';
+            cell1.appendChild(doneCheck);
+            var cell2 = row.insertCell(1);
+            cell2.innerHTML = tasks[a];
+            cell2.classList.add('label');
+            var cell3 = row.insertCell(2);
+            let deleteBtn = document.createElement('button');
+            deleteBtn.innerText = 'Delete';
+            deleteBtn.className = 'delete';
+            let editBtn = document.createElement('button');
+            editBtn.innerText = 'Edit';
+            editBtn.className = 'edit';
+            cell3.appendChild(editBtn);
+            cell3.appendChild(deleteBtn); 
+        }
+        
+    }
+    </script>
+</body>
+</html>

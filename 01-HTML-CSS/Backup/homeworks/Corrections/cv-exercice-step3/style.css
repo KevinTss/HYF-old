@@ -1,0 +1,98 @@
+/* Colors and Fonts */
+
+body {
+    background: #EBEBEB;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: #7d7d7d;
+    font-size: 15px;
+    line-height: 1.6em;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    color: #DD5555;
+    font-size: 22px;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+a {
+    color: rgb(160, 160, 160);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #DD5555;
+    text-decoration: none;
+}
+
+
+
+@media (max-width: 960px) {
+
+    /* For a screen < 960px, this CSS will be read */
+    .container {
+        width: 700px;
+    }
+}
+
+@media (max-width: 720px) {
+
+    /* For a screen < 720px, this CSS will be read */
+    .container {
+        width: 500px;
+    }
+}
+
+@media (max-width: 540px) {
+
+    /* For a screen < 540px, this CSS will be read */
+    .container {
+        width: 300px;
+    }
+}
+
+
+/* First simple components */
+
+.text-center {
+    text-align: center;
+}
+
+.container {
+    width: 500px;
+    margin: 30px auto;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+
+/* avatar bordered */
+.avatar-bordered {
+    float: right;
+    width: 50px;
+    border-radius: 50%;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.4);
+    border: white 1px solid;
+
+}

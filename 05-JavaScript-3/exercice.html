@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Title</title>
+</head>
+<body>
+  
+  <div>
+    <h1>Title</h1>
+    <p>Don't forget to have fun !</p>
+    <div id="myID">
+
+    </div>
+  </div>
+
+  <script>
+    var http = new XMLHttpRequest();
+    var http2 = new XMLHttpRequest();
+    const changeStateHandler = function () {
+      if (http.readyState === 4) {
+        if (http.status === 200) {
+          const alpha2code = JSON.parse(http.response).alpha2Code.toLowerCase()
+          http2.open('GET', 'https://restcountries.eu/rest/v2/lang/' + alpha2code);
+          http2.send();
+        }
+      }
+    }
+    const changeStateHandler2 = function () {
+      if (http.readyState === 4) {
+        if (http.status === 200) {
+          console.log(http2.response)
+        }
+      }
+    }
+
+    http.onreadystatechange = changeStateHandler;
+    http2.onreadystatechange = changeStateHandler2;
+
+
+    http.open('GET', 'https://restcountries.eu/rest/v2/alpha/es');
+    http.send();
+
+    // console.log(http)
+
+
+  </script>
+</body>
+</html>

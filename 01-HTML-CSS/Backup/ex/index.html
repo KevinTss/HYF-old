@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+    html {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+
+    div.template {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      background-color: lightgreen;
+    }
+
+    div.header {
+      background-color: red;
+      width: 100%;
+      height: 70px;
+    }
+    div.body {
+      flex: 1;
+      background-color: yellow;
+      display: flex;
+    }
+    div.aside {
+      flex: 1;
+      background-color: purple;
+    }
+    div.content {
+      flex: 1;
+      background-color: brown;
+    }
+    div.footer {
+      background-color: blue;
+      width: 100%;
+      height: 50px;
+    }
+
+    @media (max-width: 450px) {
+
+      div.body {
+        flex-direction: column;
+      }
+      
+
+    }
+
+    
+    /* div div.bloc-1 {
+      background-color: blue !important;
+    }
+    div.bloc-2 {
+      background-color: red;
+    } */
+    /*div {
+      background-color: green;
+      color: white;
+    } */
+
+  </style>
+</head>
+<body>
+
+  <div class="template">
+
+    <div class="header">
+      HEADER
+    </div>
+
+    <div class="body">
+      <div class="aside">
+        ASIDE
+      </div>
+      <div class="content">
+        CONTENT
+      </div>
+    </div>
+
+    <div class="footer">
+      FOOTER
+    </div>
+
+  </div>
+
+
+  <!-- <div class="bloc bloc-1" style="background-color: purple;">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus soluta libero molestias dolore, suscipit neque ipsa alias consequatur ea amet eveniet sit perspiciatis doloribus maiores, harum autem optio aut non.
+  </div>
+
+  <div class="bloc bloc-2">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus soluta libero molestias dolore, suscipit neque ipsa alias consequatur ea amet eveniet sit perspiciatis doloribus maiores, harum autem optio aut non.
+  </div> -->
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
