@@ -1,8 +1,7 @@
 # Lab 1
 
 1. Install `Lodash` and save it in `package.json`
-2. Create an array of objects 
-``` {name: “”, age: “”} ```
+2. Create an array of objects ``` {name: “”, age: “”} ```
 3. Sort the array in a descending order based on the age. lodash
 4. Find a the oldest and youngest people in the array. lodash
 5. Remove the oldest person from the array. lodash
