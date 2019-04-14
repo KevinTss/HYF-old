@@ -1,0 +1,13 @@
+{
+  "name": "lab-01-lodash-handling",
+  "version": "1.0.0",
+  "description": "First lab for NodeJS - Try to install and use Lodash librairy",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "author": "Kevin",
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}
