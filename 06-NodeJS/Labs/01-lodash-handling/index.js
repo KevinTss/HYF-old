@@ -6,6 +6,10 @@ const people = [
   { name: "Eliot", age: 42 },
   { name: "Brice", age: 65 },
   { name: "Lizzy", age: 28 }
-]
+];
 
-console.log( _.sortBy(people, p => p.age) )
+// 1. sorted by age
+console.log( _.sortBy(people, p => p.age) );
+
+// 2. Find the oldest and the yougnest
+console.log(`The oldest is ${_.maxBy(people, p => p.age).name} and the yougnest is ${_.minBy(people, p => p.age).name}`)
