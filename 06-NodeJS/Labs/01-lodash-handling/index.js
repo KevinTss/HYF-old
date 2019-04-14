@@ -1,4 +1,4 @@
-const _ = required('lodash');
+const _ = require('lodash');
 
 const people = [
   { name: "John", age: 77 },
@@ -7,3 +7,5 @@ const people = [
   { name: "Brice", age: 65 },
   { name: "Lizzy", age: 28 }
 ]
+
+console.log( _.sortBy(people, p => p.age) )
