@@ -17,5 +17,6 @@ node
 
 Now you are in node environnement, you can execute classic javascript functions like `console.log('Hello World!')`,...
 
-To quit the environnement you can press `control + c` or type `.exit` and `Enter``
+To quit the environnement you can press `control + c` or type `.exit` and `Enter`
 
+Now, just go inside exercices 💪
