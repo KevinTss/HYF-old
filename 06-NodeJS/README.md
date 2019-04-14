@@ -20,3 +20,5 @@ Now you are in node environnement, you can execute classic javascript functions 
 To quit the environnement you can press `control + c` or type `.exit` and `Enter`
 
 Now, just go inside exercices 💪
+
+When it's okay, try to make the Lab for the next lesson
