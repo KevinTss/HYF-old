@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js" integrity="sha256-7/yoZS3548fXSRXqc/xYzjsmuW3sFKzuvOCHd06Pmps=" crossorigin="anonymous"></script>
 </head>
 <body>
   
@@ -16,12 +17,85 @@
 
     // console.log(window.alert)
 
-    window.alourt = function() {
-      console.log("hello")
-    }
+    // window.alourt = function() {
+    //   console.log("hello")
+    // }
 
-    alourt()
-    alert()
+    // alourt()
+    // alert()
+
+    // const lodash = require('lodash');
+// const fs = require('fs')
+
+/*Create an array of objects {name: “”, age: “”}*/
+const person = [
+
+    {
+        name: "Jon Snow",
+        age: 38
+    },
+    {
+        name: "Daenerys Targaryen",
+        age: 30
+    },
+    {
+        name: "Arya Stark",
+        age: 28
+    },
+    {
+        name: "Tyrion Lannister",
+        age: 44
+    }
+]
+
+const people = _.map(person, (myPeople) => {
+    console.log(myPeople)
+})
+
+
+/*Sort the array in a descending order based on the age. lodash*/
+const descAge = _.orderBy(person, 'age', 'desc')
+console.log(descAge)
+
+
+/*Find the oldest person. lodash*/
+const oldestPerson = _.maxBy(person, 'age')
+console.log(oldestPerson)
+
+
+/*Find the youngest person. lodash*/
+const youngestPerson = _.minBy(person, 'age')
+console.log(youngestPerson)
+
+
+/*Remove the oldest person from the array. lodash*/
+const removeTheOldest = _.remove(person, oldestPerson)
+console.log(removeTheOldest)
+console.log(person)
+
+
+/*Add some objects to the array with the same age but different names*/
+const addPeople = person.push({ name: 'Joffrey Baratheon', age: 25 }, { name: 'Bran Stark', age: 25 }, { name: 'Khal Drogo', age: 40 }, { name: 'Theon Greyjoy', age: 30 }, { name: 'Jaime Lannister', age: 40 });
+console.log(person)
+
+
+/*Group the people by age. lodash*/
+const groupedByAge = _.groupBy(person, 'age');
+console.log(groupedByAge)
+
+
+/*(Challenge) Iterate through the array and add an entry to the file with every person in the array in the form: name is age*/
+const iteratePeps = person.forEach((i) => {
+    // fs.appendFile('people.txt', `${i.name} is ${i.age}\n`, (err) => {
+    //     if (err) {
+    //         console.log(err)
+    //         return;
+    //     }
+    // })
+    // console.log(`${i.name} is ${i.age}`)
+})
+
+
     
   </script>
 </body>
