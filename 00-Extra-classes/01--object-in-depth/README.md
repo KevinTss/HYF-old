@@ -6,10 +6,10 @@ Find here the source with all explanations.
 
 ## Usefull documentation :
 
-`new` operator: [Doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new)
-`===`operator: [Doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
-prototype: [Doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype)
-hasOwnProperty: [Doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
+`new` operator: [Doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new)  
+`===`operator: [Doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)  
+prototype: [Doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype)  
+hasOwnProperty: [Doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)  
 
 
 ## Article : 
