@@ -21,11 +21,11 @@ const get = function(url) {
 
 let users = null;
 
-const getPosts = function() {
-  users  = get('https://jsonplaceholder.typicode.com/users');
+const getUsers = function() {
+  users = get('https://jsonplaceholder.typicode.com/users');
   console.log('user', users);
 }
 
-document.getElementById("ex1").addEventListener('click', getPosts);
+document.getElementById("ex1").addEventListener('click', getUsers);
 
 // Why that code is wrong ???

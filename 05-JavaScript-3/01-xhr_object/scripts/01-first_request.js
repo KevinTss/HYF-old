@@ -36,7 +36,7 @@ const changeStateHandler = function () {
   console.log('Status', http.status);
 
   if (http.readyState === 4 && http.status === 200) {
-    console.log('response', http.response);
+    console.log('response', JSON.parse(http.response));
   }
 
 }
@@ -51,7 +51,7 @@ const firstRequest = function(parse) {
   
   // Url for the request
   // ex: rest countries : https://restcountries.eu/
-  const url = 'https://restcountries.eu/rest/v2/alpha/be';
+  const url = 'https://pokeapi.co/api/v2/pokemon/pikachu/';
 
   http.open(method, url);
   http.send();

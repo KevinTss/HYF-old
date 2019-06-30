@@ -24,15 +24,15 @@
 
   let users = null
 
-  const getPosts = function() {
-    get('https://jsonplaceholder.typicode.com/users', function(response) {
-      users = JSON.parse(response);
+  const getUsers = function() {
+    get('https://jsonplaceholder.typicode.com/users', function(a) {
+      users = JSON.parse(a);
       console.log('user', users);
     }, function(error) {
       console.log(error);
     })
   }
 
-  document.getElementById("ex2").addEventListener('click', getPosts);
+  document.getElementById("ex2").addEventListener('click', getUsers);
 
 }
