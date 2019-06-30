@@ -1,5 +1,4 @@
 
-
 class Form {
 
   constructor(document, className) {
