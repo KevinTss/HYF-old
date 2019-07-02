@@ -10,30 +10,41 @@
   
   <script>
 
-    // arrow function ES6
-    const logX = name => 'monsieur' + name
 
-    console.log(logX('kevin'))
+    const kevin = {
+      name: "kevin",
+      age: 27,
+      presenteToi: function () {
+        console.log('Bonjour, je suis ' + this.name);
+      }
+    };
 
-    function logN(a) {
+    console.log(kevin.age)
+    console.log(kevin.name)
+    console.log(kevin.presenteToi())
 
-    }
 
-    const logNumber = function (value, text) {
-      console.log(text, value)
-    }
+    // const addition = function (nb1, nb2) {
+    //   const resultat = nb1 + nb2;
+    //   return resultat;
+    // }
 
-    const list = [];
+    // console.log(resultat);
+    // console.log(addition(2, 3));
 
-    for ( let i = 0 ; i < 10 ; i ++ ) {
-      logNumber(i, 'hello');
-    }
+    // console.log(2 + 3);
 
-    let cpt = 0;
-    while (cpt < 10) {
-      logNumber(cpt, 'hi');
-      cpt++;
-    }
+    // const list = [];
+
+    // for ( let i = 0 ; i < 10 ; i ++ ) {
+    //   logNumber(i, 'hello');
+    // }
+
+    // let cpt = 0;
+    // while (cpt < 10) {
+    //   logNumber(cpt, 'hi');
+    //   cpt++;
+    // }
 
 
     
