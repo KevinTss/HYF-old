@@ -10,38 +10,30 @@
   
   <script>
 
-    let name = "kevin";
-    let copyName = name;
-    const name2 = "gillian";
-    const age = 23;
-    const isHuman = true;
+    // arrow function ES6
+    const logX = name => 'monsieur' + name
 
-    const tableau = ["Chaise", "Table", 3, true];
-    const copyTableau = tableau;
-    // type: array
-    // - etagère 5 - etage 2
-    // - slfjvbsjlb
-    // - slfjvbsjlb
-    // - slfjvbsjlb
+    console.log(logX('kevin'))
 
-    console.log('++1', tableau);
-    console.log('++2', copyTableau);
-    copyTableau[0] = "gillian"
-    console.log('++3', tableau);
-    console.log('++4', copyTableau);
+    function logN(a) {
 
+    }
 
-    // const list = [];
+    const logNumber = function (value, text) {
+      console.log(text, value)
+    }
 
-    // for ( let i = 0 ; i < 10 ; i ++ ) {
-    //   console.log('hello', i);
-    // }
+    const list = [];
 
-    // let cpt = 0;
-    // while (cpt < 10) {
-    //   console.log('hi', cpt);
-    //   cpt++;
-    // }
+    for ( let i = 0 ; i < 10 ; i ++ ) {
+      logNumber(i, 'hello');
+    }
+
+    let cpt = 0;
+    while (cpt < 10) {
+      logNumber(cpt, 'hi');
+      cpt++;
+    }
 
 
     
