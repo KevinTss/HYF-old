@@ -7,46 +7,65 @@
   <title>Custom class</title>
 </head>
 <body>
-  
+
+  <div id="app">
+    
+  </div>
+
   <script>
 
+    
+    const app = document.getElementById('app')
 
-    const kevin = {
-      name: "kevin",
-      age: 27,
-      presenteToi: function () {
-        console.log('Bonjour, je suis ' + this.name);
+    const components = []
+
+    const btn = document.createElement('button')
+    btn.classList.add("myBtn")
+    btn.innerHTML = 'Click me'
+    components.push(btn)
+    
+    const para = document.createElement('p')
+    para.innerText = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nostrum facere suscipit? Fuga eius ipsum cumque, magni ullam est vero provident beatae tempora ut distinctio labore error hic minima similique!'
+    components.push(para)
+
+    components.forEach(el => {
+      app.appendChild(el)
+    })
+
+
+    class Animal {
+      constructor(name, genre, nbPattes) {
+        this.name = name
+        this.genre = genre
+        this.nbPattes = nbPattes
       }
-    };
+      presenter() {
+        console.log('coucou ' + this.name)
+      }
 
-    console.log(kevin.age)
-    console.log(kevin.name)
-    console.log(kevin.presenteToi())
+    }
 
+    class Chevre extends Animal {
+      constructor(name) {
+        super(name, 'Chèvre', 4)
+      }
+    }
 
-    // const addition = function (nb1, nb2) {
-    //   const resultat = nb1 + nb2;
-    //   return resultat;
-    // }
+    class Oiseau extends Animal {
+      constructor(name) {
+        super(name, 'Oiseau', 2)
+      }
+    }
 
-    // console.log(resultat);
-    // console.log(addition(2, 3));
+    const chevre = new Chevre("kevin")
+    const chevre2 = new Chevre("gillian")
+    const o = new Oiseau("bill")
 
-    // console.log(2 + 3);
+    console.log(chevre)
+    console.log(chevre2)
+    console.log(o)
 
-    // const list = [];
-
-    // for ( let i = 0 ; i < 10 ; i ++ ) {
-    //   logNumber(i, 'hello');
-    // }
-
-    // let cpt = 0;
-    // while (cpt < 10) {
-    //   logNumber(cpt, 'hi');
-    //   cpt++;
-    // }
-
-
+    o.presenter()
     
   </script>
 </body>
