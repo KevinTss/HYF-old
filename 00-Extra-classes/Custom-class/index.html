@@ -12,60 +12,45 @@
     
   </div>
 
+  <p id="a"></p>
+
   <script>
 
-    
-    const app = document.getElementById('app')
+    class Form {
 
-    const components = []
+      form = null;
 
-    const btn = document.createElement('button')
-    btn.classList.add("myBtn")
-    btn.innerHTML = 'Click me'
-    components.push(btn)
-    
-    const para = document.createElement('p')
-    para.innerText = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nostrum facere suscipit? Fuga eius ipsum cumque, magni ullam est vero provident beatae tempora ut distinctio labore error hic minima similique!'
-    components.push(para)
-
-    components.forEach(el => {
-      app.appendChild(el)
-    })
-
-
-    class Animal {
-      constructor(name, genre, nbPattes) {
-        this.name = name
-        this.genre = genre
-        this.nbPattes = nbPattes
-      }
-      presenter() {
-        console.log('coucou ' + this.name)
-      }
-
-    }
-
-    class Chevre extends Animal {
       constructor(name) {
-        super(name, 'Chèvre', 4)
+        this.form = document.createElement("form");
+        this.form.setAttribute("class", name);
       }
-    }
 
-    class Oiseau extends Animal {
-      constructor(name) {
-        super(name, 'Oiseau', 2)
+      addButton(){}
+      addCheckbox(){}
+  
+      addInput() {
+        const input = document.createElement("input");
+        input.setAttribute("type", "text");
+        this.form.appendChild(input);
+      }
+
+      render(id) {
+        const app = document.getElementById(id);
+        app.appendChild(this.form);
       }
-    }
 
-    const chevre = new Chevre("kevin")
-    const chevre2 = new Chevre("gillian")
-    const o = new Oiseau("bill")
+    };
 
-    console.log(chevre)
-    console.log(chevre2)
-    console.log(o)
+    const form1 = new Form("kevin");
+    form1.addInput();
+    form1.render("app");
 
-    o.presenter()
+    const form2 = new Form("Gillian");
+    form2.render("a");
+
+
+    console.log('1', form1)
+    console.log('2', form2)
     
   </script>
 </body>
