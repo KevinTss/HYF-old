@@ -8,49 +8,50 @@
 </head>
 <body>
 
-  <div id="app">
+  <div id="containerA">
     
   </div>
 
-  <p id="a"></p>
+  <p id="containerB"></p>
 
   <script>
 
+    /**
+     * Base on that Form class, improve it with following stuff:
+     * 
+     * - Add a function to create a input (receiving as a parameter the className)
+     * - Add a function to create a select, with an array as a attribute containing all options
+     * - Add a function to wrap a input with a div and a className `input-container` and optionnaly add a label
+     */
+
     class Form {
 
-      form = null;
+      formElement = null;
 
       constructor(name) {
-        this.form = document.createElement("form");
-        this.form.setAttribute("class", name);
+        this.formElement = document.createElement("form");
+        this.formElement.setAttribute("class", name);
       }
-
-      addButton(){}
-      addCheckbox(){}
   
-      addInput() {
-        const input = document.createElement("input");
-        input.setAttribute("type", "text");
-        this.form.appendChild(input);
+      addButton() {
+        const input = document.createElement("button");
+        input.setAttribute("type", "submit");
+        this.formElement.appendChild(input);
       }
 
       render(id) {
         const app = document.getElementById(id);
-        app.appendChild(this.form);
+        app.appendChild(this.formElement);
       }
 
     };
 
-    const form1 = new Form("kevin");
-    form1.addInput();
-    form1.render("app");
+    const form1 = new Form("kevin-form");
+    form1.addButton();
+    form1.render("containerA");
 
-    const form2 = new Form("Gillian");
-    form2.render("a");
-
-
-    console.log('1', form1)
-    console.log('2', form2)
+    const form2 = new Form("rob-form");
+    form2.render("containerB");
     
   </script>
 </body>
