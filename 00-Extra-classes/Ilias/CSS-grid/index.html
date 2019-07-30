@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CSS - Grid</title>
+
+  <style>
+  
+  .container {
+    display: grid;
+    grid-template-rows: 50px 800px 50px;
+    border: 1px solid red;
+  }
+
+  .header {
+    background-color: purple;
+  }
+
+  .main {
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-template-rows: 50% 50%;
+  }
+
+  .un {
+    background-color: blue;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: end;
+  }
+  .deux {
+    background-color: brown;
+    grid-column-start: 6;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 1;
+  }
+  .trois {
+    background-color: green;
+    grid-column-start: 6;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 2;
+  }
+  .quatre {
+    background-color: pink;
+    grid-column-start: 6;
+    grid-column-end: end;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .footer {
+    background-color: yellow;
+  }
+
+  </style>
+
+</head>
+<body>
+  
+  <div class="container">
+
+    <div class="header">header</div>
+
+
+    <div class="main">
+      <div class="un">1</div>
+      <div class="deux">2</div>
+      <div class="trois">3</div>
+      <div class="quatre">4</div>
+    </div>
+
+
+    <div class="footer">footer</div>
+
+  </div>
+
+</body>
+</html>
