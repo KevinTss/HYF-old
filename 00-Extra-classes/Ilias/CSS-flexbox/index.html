@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CSS - Flex</title>
+
+  <style>
+
+  body { 
+    height: 100%; 
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkblue;
+    height: 100px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+  }
+
+  .header h1 {
+    color: white;
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    height: 100px;
+    margin-bottom: 5px;
+  }
+
+  .navigation .menu {
+    display: flex;
+    padding-left: 0;
+  }
+
+  .navigation .menu .menu-item {
+    display: block;
+    list-style-type: none;
+    color: white;
+    border: 1px solid white;
+    padding: 20px;
+    margin: 0 5px;
+  }
+
+  .main {
+    display: flex;
+    flex: 1;;
+    min-height: 700px;
+  }
+
+  .main .article {
+    background-color: lightblue;
+  }
+
+  .main > .article {
+    flex-grow: 1;
+  }
+
+  .main .aside {
+    margin-left: 5px;
+    flex-grow: 0.3;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main .aside .article {
+    flex: 1;
+  }
+
+  .main .aside .article:first-child {
+    margin-bottom: 5px;
+  }
+  
+  </style>
+
+</head>
+<body>
+  
+  <div class="container">
+
+    <header class="header">
+      <h1>The header</h1>
+    </header>
+
+    <nav class="navigation">
+      <ul class="menu">
+        <li class="menu-item">Text 1</li>
+        <li class="menu-item">Text 2</li>
+        <li class="menu-item">Text 3</li>
+        <li class="menu-item">Text 4</li>
+        <li class="menu-item">Text 5</li>
+      </ul>
+    </nav>
+
+    <main class="main">
+
+      <article class="article">
+        Main article
+      </article>
+
+      <aside class="aside">
+        <article class="article">Aside article 1</article>
+        <article class="article">Aside article 2</article>
+      </aside>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
