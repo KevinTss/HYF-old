@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JS - DOM</title>
+</head>
+<body>
+
+
+  <div>
+
+    <button class="trois">Text 1</button>
+    <button id="deux">Text 2</button>
+    <button class="trois">Ajouter element</button>
+
+    <ul>
+      <li>example</li>
+      <li>Encore un element de liste</li>
+    </ul>
+
+  </div>
+
+  <script>
+  
+    // definir object
+    var obj = {
+      kevin: "Ilias",
+      key2: "ma valeur",
+      key3: function() {
+        console.log('coucou')
+      }
+    }
+
+    // acceder key d'un object
+    // manière 1: par le nom de la clé
+    console.log(obj.kevin)
+   
+    // manière 2: dynamiquement 
+    console.log(obj["key2"])
+
+    // acceder à un function dans un object ==> que l'on appelle methode
+    console.log(obj.key3())
+
+    // objet & function native du browser
+    console.log(document.getElementById)
+
+    var el = document.getElementById("deux")
+
+    // ex tableau
+    var t = ["ghhj", "yfgh", "ug"]
+
+    // example methods native JS : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/map
+    // console.log(t.map())
+
+    // acceder au text d'un element
+    console.log(el.innerText)
+    // comment modifier la valeur 
+    el.innerText = "Kevin"
+
+    /*
+      EVENT
+    */
+
+    var btns = document.getElementsByClassName("trois")
+
+    console.log('BOUTON', btns)
+
+    var boutonEvent = btns[1]
+
+    var f = function() {
+      console.log('bouton clické')
+    }
+
+    boutonEvent.addEventListener("click", f)
+
+  
+  </script>
+  
+</body>
+</html>
