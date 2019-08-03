@@ -51,7 +51,7 @@ const firstRequest = function(parse) {
   
   // Url for the request
   // ex: rest countries : https://restcountries.eu/
-  const url = 'https://pokeapi.co/api/v2/pokemon/pikachu/';
+  const url = 'https://restcountries.eu/rest/v2/alpha/be';
 
   http.open(method, url);
   http.send();
