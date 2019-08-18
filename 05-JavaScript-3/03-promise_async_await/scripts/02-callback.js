@@ -18,19 +18,25 @@
         }
       } 
     }
-    xhr.open('GET', url, true);
+    xhr.open('GET', url);
     xhr.send();
   }
 
   let users = null
 
   const getUsers = function() {
-    get('https://jsonplaceholder.typicode.com/users', function(a) {
-      users = JSON.parse(a);
-      console.log('user', users);
-    }, function(error) {
-      console.log(error);
-    })
+    get(
+      'https://jsonplaceholder.typicode.com/users',
+
+      function(a) {
+        users = JSON.parse(a);
+        console.log('user', users);
+      },
+       
+      function(error) {
+        console.warn(error);
+      }
+    );
   }
 
   document.getElementById("ex2").addEventListener('click', getUsers);

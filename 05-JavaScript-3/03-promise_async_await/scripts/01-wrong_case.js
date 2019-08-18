@@ -15,7 +15,7 @@ const get = function(url) {
       return xhr.responseText;
     }
   }
-  xhr.open('GET', url, true);
+  xhr.open('GET', url);
   xhr.send();
 }
 
