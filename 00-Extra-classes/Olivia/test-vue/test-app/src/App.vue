@@ -1,43 +1,33 @@
 <template>
   <div id="app">
-    <button id="test"></button>
+    <slider 
+      v-if="images"
+      :pictures="images" 
+    />
+    <watcherExample/>
   </div>
 </template>
 
 <script>
+import slider from './components/Slider'
+import watcherExample from './components/watcherExample'
+
 export default {
   name: 'app',
-  beforeCreate: function() {
-    console.log('before create')
-    const a = document.getElementById('test')
-    console.log(a)
+  data() {
+    return {
+      images: [
+        "https://picsum.photos/500/350",
+        "https://picsum.photos/500/350",
+        "https://picsum.photos/500/350",
+        "https://picsum.photos/500/350",
+        "https://picsum.photos/500/350",
+        "https://picsum.photos/500/350",
+        "https://picsum.photos/500/350",
+        "https://picsum.photos/500/350",
+      ],
+    }
   },
-  created() {
-    console.log('created')
-    const a = document.getElementById('test')
-    console.log(a)
-  },
-  beforeMount() {
-    console.log('before mount')
-    const a = document.getElementById('test')
-    console.log(a)
-  },
-  mounted() {
-    console.log('mounted')
-    const a = document.getElementById('test')
-    console.log(a)
-  },
-  beforeUpdate() {
-    console.log('before up')
-  },
-  updated() {
-    console.log('u')
-  },
-  beforeDestroy() {
-    console.log('dest')
-  },
-  destroyed() {
-    console.log('destroyed')
-  }
+  components: { slider, watcherExample },
 }
 </script>
