@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Javascript exercices</title>
+</head>
+<body>
+
+  <h1 id="aaa">lmskfnvsljkv</h1>
+
+  <script>
+  
+    
+  var a = "valeur"
+    var b = 6
+    var c = null
+    var d = undefined
+    var e = {}
+    var f = []
+    var g = true
+    var h = function(){return true}
+
+
+
+    // console.log(h())
+    // console.log(typeof h())
+
+    var user_name = "Kevin"
+
+    // alert("Bonjour " + user_name)
+
+    var notes_classeA = [
+      5, 
+      8, 
+      2,
+      0,
+      2,
+      9, 
+      1
+    ];
+    var notes_classeB = [
+      5, 
+      9, 
+      1,
+      3,
+      9,
+      10, 
+      10
+    ];
+
+    function moyenne_calculation(notes) {
+      var moyenne;
+      var total_notes = 0;
+      var cpt = 0;
+      while (cpt < notes.length) {
+        total_notes = total_notes + notes[cpt]
+        cpt = cpt + 1
+      }
+      moyenne = total_notes / notes.length
+      return moyenne
+    }
+
+    console.log("moyenne classeA ", moyenne_calculation(notes_classeA))
+    console.log("moyenne classeB ", moyenne_calculation(notes_classeB))
+  
+  </script>
+</body>
+</html>
